@@ -8,7 +8,12 @@ on:
 
 jobs:
   My-first-CI:
-    runs-on: ubuntu-latest
+    name: code check / python -${{ matrix.python-version }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v3
