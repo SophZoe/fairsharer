@@ -1,2 +1,4 @@
-required libraries for execution
+python==3.12.0
+ruff
+pytest==7.4.3
 
